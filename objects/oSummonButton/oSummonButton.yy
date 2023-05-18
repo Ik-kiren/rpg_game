@@ -9,7 +9,10 @@
     "name": "UI",
     "path": "folders/Objects/UI.yy",
   },
-  "parentObjectId": null,
+  "parentObjectId": {
+    "name": "oSummonButtonParent",
+    "path": "objects/oSummonButtonParent/oSummonButtonParent.yy",
+  },
   "persistent": false,
   "physicsAngularDamping": 0.1,
   "physicsDensity": 0.5,
@@ -26,8 +29,8 @@
   "properties": [],
   "solid": false,
   "spriteId": {
-    "name": "sSummonButton",
-    "path": "sprites/sSummonButton/sSummonButton.yy",
+    "name": "sButton",
+    "path": "sprites/sButton/sButton.yy",
   },
   "spriteMaskId": null,
   "visible": true,

@@ -1,20 +1,11 @@
 
 function player_construct(npc_name, npc_hp, npc_damage) constructor{
-	o_name = npc_name;
-	hp = npc_hp;
-	damage = npc_damage;
-	agility = 5;
-	level = 1;
-	xp = 0;
-	xp_to_up = 10;
-	harvest_speed = 20;
-	souls = 9;
-	pick_ups = 3;
+	
 	inventory = 
 	[	
 		["herb", 0],
 		["stone", 0],
-		["twig", 0],
+		["wood", 0],
 	];
 	
 	equipements = 
@@ -28,6 +19,18 @@ function player_construct(npc_name, npc_hp, npc_damage) constructor{
 	[
 		["name", "damage", "effect"],
 	];
+	
+	o_name = npc_name;
+	hp = npc_hp;
+	base_damage = npc_damage;
+	damage = base_damage + equipements[2][1];
+	agility = 5;
+	level = 1;
+	xp = 0;
+	xp_to_up = 10;
+	harvest_speed = 20;
+	souls = 9;
+	pick_ups = 3;
 	
 	function takeDamage(damage){
 		hp -= damage;
@@ -55,7 +58,7 @@ function player_construct(npc_name, npc_hp, npc_damage) constructor{
 	}
 	
 	function summonCost(){
-		summon_gauge -= 10;
+		souls -= 10;
 		pick_ups = 0;
 	}
 }

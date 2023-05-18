@@ -20,7 +20,6 @@ switch (combat_phase){
 			combat_turns[a_length][1] = gManager.ally.agility;
 			combat_turns[a_length][2] = phase.allyturn;
 		}
-		show_debug_message(combat_turns);
 		for (var i = 0; i < array_length(combat_turns) - 1; i++){
 			for (var j = 0; j < array_length(combat_turns)- i - 1; j++){
 				if	(combat_turns[j][1] < combat_turns[j + 1][1]){
@@ -36,7 +35,6 @@ switch (combat_phase){
 				}
 			}
 		}
-		show_debug_message(combat_turns);
 		if (gManager.ally != pointer_null){
 			c_ally = instance_create_depth(320, 450, 0, oAlly, gManager.ally);
 			c_ally.sprite_index = sEnemy;
@@ -60,6 +58,9 @@ switch (combat_phase){
 		if ((position_meeting(mouse_x, mouse_y, oEnemy) && mouse_check_button_pressed(mb_left) && check_attackbutton == 1 && instance_position(mouse_x, mouse_y, oEnemy).enemy.hp > 0)){
 			instance_position(mouse_x, mouse_y, oEnemy).enemy.takeDamage(oPlayer.player.damage);
 			show_message(string(oPlayer.player.o_name) + " a mit " + string(oPlayer.player.damage) + " de degats à " + string(instance_position(mouse_x, mouse_y, oEnemy).enemy.o_name));
+			if (instance_position(mouse_x, mouse_y, oEnemy).enemy.hp <= 0){
+				instance_position(mouse_x, mouse_y, oEnemy).sprite_index = sDeadEnemy;
+			}
 			instance_destroy(oAttackCursor);
 			check_attackbutton = 0;
 			if(isendfight(enemy_array) == 1){

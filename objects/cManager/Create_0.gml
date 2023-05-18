@@ -2,8 +2,7 @@ enemy_array = [];
 choose_target = 0;
 check_attackbutton = 0;
 randomise_target = 0;
-camera_width = camera_get_view_width(view_camera[0]);
-camera_height = camera_get_view_height(view_camera[0]);
+clicked_enemy = 0;
 
 oPlayer.sprite_index = sPlayer_idle_right;
 
@@ -21,7 +20,7 @@ combat_phase = phase.init;
 
 
 function create_combat_ui(){
-	attack_button = instance_create_depth(camera_get_view_x(view_camera[0]), camera_height, 0, attackButton);
+	attack_button = instance_create_depth(camera_get_view_x(view_camera[0]), gManager.camera_height, 0, attackButton);
 	return attack_button;
 }
 

@@ -1,4 +1,5 @@
 randomize();
+
 player_name = get_string("nom du joueur :", "default");
 
 oPlayer.player.o_name = player_name;
