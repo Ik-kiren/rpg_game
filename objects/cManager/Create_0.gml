@@ -18,7 +18,6 @@ enum phase {
 combat_phase = phase.init;
 
 
-
 function create_combat_ui(){
 	attack_button = instance_create_depth(camera_get_view_x(view_camera[0]), gManager.camera_height, 0, attackButton);
 	return attack_button;

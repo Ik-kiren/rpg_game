@@ -9,7 +9,7 @@ switch (combat_phase){
 		oPlayer.x = view_xport[0] + 200;
 		oPlayer.y = view_yport[0] + 200;
 		for ( i = 0; i <= gManager.enemy_number - 1; i++){
-			enemy_array[i] = instance_create_depth(camera_width / 1.3, camera_height / 3.5 + i * 95, 0, oEnemy);
+			enemy_array[i] = instance_create_depth(gManager.camera_width / 1.3, gManager.camera_height / 3.5 + i * 95, 0, oEnemy);
 			combat_turns[i + 1][0] = enemy_array[i];
 			combat_turns[i + 1][1] = enemy_array[i].enemy.agility;
 			combat_turns[i + 1][2] = phase.enemyturn;
